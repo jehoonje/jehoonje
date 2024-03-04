@@ -1,5 +1,4 @@
-
-SNS
+<h3 class="heading-element" dir="auto"> SNS </h3>
 
 
 <a href="https://www.instagram.com/jehoon2001/" target="_blank"><img src="https://img.shields.io/badge/SNS-556073?style={flat}&logo=instagram&logoColor=000000"/>
