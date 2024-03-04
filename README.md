@@ -16,4 +16,8 @@ Here are some ideas to get you started:
 -->
 
 
-<a href="버튼을 눌렀을 때 이동할 링크" target="_blank"><img src="https://img.shields.io/badge/javascript-#F7DF1E?style= flat-square&logo=로고&logoColor=#F7DF1E"/></a>
+<img src="https://img.shields.io/badge/JavaScript-{F7DF1E}?style={flat}&logo=javascript&logoColor=000000"/>
+<img src="https://img.shields.io/badge/HTML5-{E34F26-}?style={flat}&logo=html5&logoColor=000000"/>
+<img src="https://img.shields.io/badge/CSS-{1572B6}?style={flat}&logo=css3&logoColor=000000"/>
+<img src="https://img.shields.io/badge/React-{61DAFB}?style={flat}&logo=react&logoColor=000000"/>
+<img src="https://img.shields.io/badge/SpringBoot-{6DB33F}?style={flat}&logo=springboot&logoColor=000000"/>
