@@ -4,7 +4,7 @@ SNS
 
 <a href="https://www.instagram.com/jehoon2001/" target="_blank"><img src="https://img.shields.io/badge/SNS-556073?style={flat}&logo=instagram&logoColor=000000"/>
 <a href="https://martlet.tistory.com/" target="_blank"><img src="https://img.shields.io/badge/BLOG-3d3d3d?style={flat}&logo=tistory&logoColor=000000"/>
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=someone@example.com&su=SUBJECT&body=BODY&bcc=limjhoon8@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-EA4335?style={flat}&logo=gmail&logoColor=000000"/>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=limjhoon8@gmail.com&su=SUBJECT&body=BODY&bcc=limjhoon8@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-EA4335?style={flat}&logo=gmail&logoColor=000000"/>
 <!--
 **jehoonje/jehoonje** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
