@@ -1,15 +1,5 @@
-<div align="center"><br>++--------------------------------------------------------------------------++<br>
-<br>++--------------------------------------------------------------------------++
-<br>||      _   _        _  _         __        __            _      _  _       ||
-<br>||     | | | |  ___ | || |  ___   \ \      / /___   _ __ | |  __| || |      ||
-<br>||     | |_| | / _ \| || | / _ \   \ \ /\ / // _ \ | '__|| | / _` || |      ||
-<br>||     |  _  ||  __/| || || (_) |   \ V  V /| (_) || |   | || (_| ||_|      ||
-<br>||     |_| |_| \___||_||_| \___/     \_/\_/  \___/ |_|   |_| \__,_|(_)      ||
-<br>||                                                                          ||
-<br>++--------------------------------------------------------------------------++
-<br>++--------------------------------------------------------------------------++</div>
-<br>
-<br>
+<p align="center">
+<a href="http://bluebellybird.bearblog.dev"><img src="https://github.com/jehoonje/jehoonje/assets/70048630/fd0d2292-1d18-4df4-bce3-0162f7b796e7"></a></p>
 <h3 class="heading-element" dir="auto" align="center"> SNS </h3>
 
 
@@ -62,5 +52,5 @@ Here are some ideas to get you started:
 
 
 <p align="center">
-        <img src="https://raw.githubusercontent.com/mayhemantt/mayhemantt/Update/svg/Bottom.svg" alt="Github Stats" />
+        <img src="https://raw.githubusercontent.com/trinib/trinib/82213791fa9ff58d3ca768ddd6de2489ec23ffca/images/footer.svg" alt="Github Stats" />
 </p>
