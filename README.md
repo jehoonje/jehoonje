@@ -1,3 +1,5 @@
+<br>
+<br>
 <h3 class="heading-element" dir="auto" align="center"> SNS </h3>
 
 
@@ -41,8 +43,6 @@ Here are some ideas to get you started:
     <img src="https://img.shields.io/badge/VScode-007ACC?style={flat}&logo=visualstudiocode&logoColor=000000"/>
     <img src="https://img.shields.io/badge/Eclipse-f26033?style={flat}&logo=eclipseide&logoColor=000000"/>
 </div>
-<br>
-<br>
 <br>
 <br>
 <br>
