@@ -47,7 +47,7 @@ Here are some ideas to get you started:
 <br>
 <br>
  <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=jehoonje&show_icons=true&theme=radical" alt="hun2zz's GitHub stats">
+  <img src="https://github-readme-stats.vercel.app/api?username=jehoonje&show_icons=true&theme=blue-green" alt="jehoon's GitHub stats">
 </p>
 
 
