@@ -1,7 +1,7 @@
-<h3 class="heading-element" dir="auto"> SNS </h3>
+<h3 class="heading-element" dir="auto" align="center"> SNS </h3>
 
 
-<div style="text-align: center;">
+<div align="center">
     <a href="https://www.instagram.com/jehoon2001/" target="_blank">
         <img src="https://img.shields.io/badge/SNS-556073?style={flat}&logo=instagram&logoColor=000000"/>
     </a>
@@ -28,14 +28,15 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<h3 class="heading-element" dir="auto">📚 Tech Stack 📚</h3>
+<h3 class="heading-element" dir="auto" align="center">📚 Tech Stack 📚</h3>
 
-<div style="text-align: center;">
+<div align="center">
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style={flat}&logo=javascript&logoColor=000000"/>
     <img src="https://img.shields.io/badge/HTML5-E34F26?style={flat}&logo=html5&logoColor=000000"/>
     <img src="https://img.shields.io/badge/CSS-1572B6?style={flat}&logo=css3&logoColor=000000"/>
     <img src="https://img.shields.io/badge/React-61DAFB?style={flat}&logo=react&logoColor=000000"/>
     <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style={flat}&logo=springboot&logoColor=000000"/>
+    <br>
     <img src="https://img.shields.io/badge/MySQL-4479A1?style={flat}&logo=mysql&logoColor=000000"/>
     <img src="https://img.shields.io/badge/VScode-007ACC?style={flat}&logo=visualstudiocode&logoColor=000000"/>
     <img src="https://img.shields.io/badge/Eclipse-f26033?style={flat}&logo=eclipseide&logoColor=000000"/>
