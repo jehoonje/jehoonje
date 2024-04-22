@@ -64,7 +64,9 @@ Here are some ideas to get you started:
     <br>
     <img src="https://img.shields.io/badge/MySQL-4479A1?style={flat}&logo=mysql&logoColor=000000"/>
     <img src="https://img.shields.io/badge/VScode-007ACC?style={flat}&logo=visualstudiocode&logoColor=000000"/>
-    <img src="https://img.shields.io/badge/Eclipse-f26033?style={flat}&logo=eclipseide&logoColor=000000"/>
+    <img src="https://img.shields.io/badge/Java-ED8B00?style={flat}&logo=openjdk&logoColor=000000"/> 
+    <img src="https://img.shields.io/badge/jQuery-0769AD?style={flat}&logo=jquery&logoColor=000000"/>
+    <img src="https://img.shields.io/badge/GIT-E44C30?style={flat}&logo=git&logoColor=000000"/>
 </div>
 <br>
 <br>
