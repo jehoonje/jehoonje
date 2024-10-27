@@ -3,7 +3,7 @@ name: Update README on Board Change
 on:
   repository_dispatch:
     types: [update_readme]
-    
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -24,3 +24,14 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # GitHub Secrets에 설정된 토큰
       run: node update_github_readme.js
+
+      name: Push changes
+      run: |
+        git config --global user.name 'jehoonje'
+        git config --global user.email 'YOUR_EMAIL@example.com'
+        git add README.md
+        git commit -m "Update board state in README"
+        git push --force https://$MY_GITHUB_TOKEN@github.com/jehoonje/jehoonje.git main
+      env:
+        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+
