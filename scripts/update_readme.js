@@ -28,8 +28,11 @@ const END = '<!-- BOARD END -->';
 // 보드 상태를 가져오는 함수
 async function fetchBoard() {
   return new Promise((resolve, reject) => {
-    https.get('https://omok-game.vercel.app/api/move', (res) => { // 실제 서버 배포 URL로 변경
+    console.log('Fetching board data from API...');
+    https.get('https://omok-game.vercel.app/api/board', (res) => { // 엔드포인트 수정
       let data = '';
+
+      console.log(`Status Code: ${res.statusCode}`);
 
       if (res.statusCode !== 200) {
         reject(new Error(`Failed to fetch board: ${res.statusCode}`));
@@ -40,13 +43,18 @@ async function fetchBoard() {
       res.on('data', (chunk) => (data += chunk));
       res.on('end', () => {
         try {
+          console.log('Raw data received:', data); // 응답 데이터 로깅
           const boardData = JSON.parse(data).board;
+          console.log('Parsed board data:', boardData); // 파싱된 데이터 로깅
           resolve(boardData);
         } catch (error) {
+          console.error('JSON parse error:', error.message);
+          console.error('Received data:', data); // 파싱 실패 시 받은 데이터 로깅
           reject(error);
         }
       });
     }).on('error', (err) => {
+      console.error('HTTPS request error:', err.message);
       reject(err);
     });
   });
@@ -54,6 +62,7 @@ async function fetchBoard() {
 
 // 보드 데이터를 마크다운 테이블로 변환하는 함수
 function generateMarkdownTable(board) {
+  console.log('Generating markdown table...');
   const headers = ['   ', ...Array.from({ length: 15 }, (_, i) => String.fromCharCode(65 + i))];
   const headerRow = `| ${headers.join(' | ')} |`;
   const separatorRow = `|${headers.map(() => '---').join('|')}|`;
@@ -69,16 +78,20 @@ function generateMarkdownTable(board) {
     return `| ${formattedRowNumber} | ${rowContent} |`;
   });
 
-  return [headerRow, separatorRow, ...rows].join('\n');
+  const markdown = [headerRow, separatorRow, ...rows].join('\n');
+  console.log('Generated markdown table:\n', markdown);
+  return markdown;
 }
 
 // GitHub API를 사용하여 README.md 업데이트
 async function updateReadme() {
   try {
+    console.log('Starting README update process...');
     const board = await fetchBoard();
     const boardMarkdown = generateMarkdownTable(board);
 
     // README.md 파일 가져오기
+    console.log('Fetching README.md from GitHub...');
     const { data: fileData } = await octokit.repos.getContent({
       owner: REPO_OWNER,
       repo: REPO_NAME,
@@ -88,8 +101,10 @@ async function updateReadme() {
 
     const sha = fileData.sha;
     const content = Buffer.from(fileData.content, 'base64').toString('utf8');
+    console.log('Current README.md content fetched.');
 
     // 새로운 README.md 내용 생성
+    console.log('Replacing board section in README.md...');
     const newContent = content.replace(
       new RegExp(`${START}[\\s\\S]*${END}`),
       `<!-- BOARD START -->\n\`\`\`markdown\n${boardMarkdown}\n\`\`\`\n<!-- BOARD END -->`
@@ -99,6 +114,7 @@ async function updateReadme() {
     const encodedContent = Buffer.from(newContent, 'utf8').toString('base64');
 
     // README.md 업데이트 요청
+    console.log('Updating README.md on GitHub...');
     await octokit.repos.createOrUpdateFileContents({
       owner: REPO_OWNER,
       repo: REPO_NAME,
@@ -111,7 +127,7 @@ async function updateReadme() {
 
     console.log('README.md updated successfully on GitHub.');
   } catch (error) {
-    console.error('Error updating README.md:', error);
+    console.error('Error updating README.md:', error.message);
     process.exit(1);
   }
 }
