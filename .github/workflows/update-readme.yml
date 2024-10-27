@@ -25,10 +25,11 @@ jobs:
       env:
         MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
-    - name: Push changes
+    - name: Pull latest changes and Push updates
       run: |
         git config --global user.name 'jehoonje'
-        git config --global user.email 'limjhoon8@gmail.com'  # 자신의 GitHub 이메일로 변경
+        git config --global user.email 'YOUR_EMAIL@example.com'  # 본인의 GitHub 이메일로 수정
+        git pull --rebase https://$MY_GITHUB_TOKEN@github.com/jehoonje/jehoonje.git main
         git add README.md
         git commit -m "Update board state in README"
         git push https://$MY_GITHUB_TOKEN@github.com/jehoonje/jehoonje.git main
