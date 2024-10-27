@@ -79,3 +79,13 @@ Here are some ideas to get you started:
 <p align="center">
         <img src="https://raw.githubusercontent.com/trinib/trinib/82213791fa9ff58d3ca768ddd6de2489ec23ffca/images/footer.svg" alt="Github Stats" />
 </p>
+
+
+# 오목 게임
+
+이 프로젝트는 Heroku에 배포된 오목 게임 서버입니다. 웹 브라우저에서 오목 게임을 플레이할 수 있습니다.
+
+## 게임에 참여하기
+
+[오목 게임에 참여하려면 여기를 클릭하세요](https://omok-game-app.herokuapp.com/)
+
