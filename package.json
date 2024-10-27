@@ -1,15 +1,13 @@
 {
-  "name": "omok-client",
+  "name": "jehoonje",
   "version": "1.0.0",
-  "description": "오목 게임 클라이언트",
-  "main": "public/app.js",
+  "description": "Update README with Omok game state",
+  "main": "scripts/update_readme.js",
+  "type": "module",
   "scripts": {
-    "start": "live-server public"
+    "update-readme": "node scripts/update_readme.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@octokit/rest": "^21.0.2"
+    "@octokit/rest": "^19.0.7"
   }
 }

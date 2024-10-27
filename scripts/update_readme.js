@@ -1,12 +1,15 @@
-// scripts/update-readme.js
-const { Octokit } = require("@octokit/rest");
-const https = require('https');
+// scripts/update_readme.js
+import { Octokit } from "@octokit/rest";
+import https from 'https';
+import { Buffer } from 'buffer';
 
-const REPO_OWNER = 'jehoonje';
-const REPO_NAME = 'jehoonje'; // 메인 프로필 레포지토리 이름
+// GitHub 레포지토리 정보
+const REPO_OWNER = 'jehoonje';  // 자신의 GitHub 사용자명
+const REPO_NAME = 'jehoonje';   // 자신의 리포지토리 이름
 const FILE_PATH = 'README.md';
-const BRANCH = 'main';
+const BRANCH = 'main';           // 기본 브랜치 이름
 
+// GitHub Personal Access Token (환경 변수에서 가져오기)
 const GITHUB_TOKEN = process.env.MY_GITHUB_TOKEN;
 
 if (!GITHUB_TOKEN) {
@@ -18,12 +21,14 @@ const octokit = new Octokit({
   auth: GITHUB_TOKEN,
 });
 
+// README 파일의 시작과 끝 부분 설정
 const START = '<!-- BOARD START -->';
 const END = '<!-- BOARD END -->';
 
+// 보드 상태를 가져오는 함수
 async function fetchBoard() {
   return new Promise((resolve, reject) => {
-    https.get('https://omok-game.vercel.app/api/move', (res) => { // 실제 서버 배포 URL로 변경
+    https.get('https://omok-game.vercel.app/', (res) => { // 실제 서버 배포 URL로 변경
       let data = '';
 
       if (res.statusCode !== 200) {
@@ -47,6 +52,7 @@ async function fetchBoard() {
   });
 }
 
+// 보드 데이터를 마크다운 테이블로 변환하는 함수
 function generateMarkdownTable(board) {
   const headers = ['   ', ...Array.from({ length: 15 }, (_, i) => String.fromCharCode(65 + i))];
   const headerRow = `| ${headers.join(' | ')} |`;
@@ -66,6 +72,7 @@ function generateMarkdownTable(board) {
   return [headerRow, separatorRow, ...rows].join('\n');
 }
 
+// GitHub API를 사용하여 README.md 업데이트
 async function updateReadme() {
   try {
     const board = await fetchBoard();
