@@ -28,7 +28,7 @@ const END = '<!-- BOARD END -->';
 // 보드 상태를 가져오는 함수
 async function fetchBoard() {
   return new Promise((resolve, reject) => {
-    https.get('https://omok-game.vercel.app/api/move', (res) => { // 실제 서버 배포 URL로 변경
+    https.get('https://omok-game.vercel.app/api/board', (res) => { // 실제 서버 배포 URL로 변경
       let data = '';
 
       if (res.statusCode !== 200) {
