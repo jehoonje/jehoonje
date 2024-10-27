@@ -21,8 +21,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./scripts
 
       - name: Run update-readme.js
         env:
           MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-        run: node scripts/update-readme.js
+        run: node update-readme.js
+        working-directory: ./scripts
