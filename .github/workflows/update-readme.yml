@@ -4,7 +4,7 @@ on:
   repository_dispatch:
     types: [update_readme]
   schedule:
-    - cron: '*/10 * * * *' # 매 10분마다 실행 (원하는 주기로 수정 가능)
+    - cron: '*/1 * * * *' # 매 10분마다 실행 (원하는 주기로 수정 가능)
 
 jobs:
   update-readme:
