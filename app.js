@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path'); // 한 번만 선언
 const app = express();
 app.use(express.json());
+require('dotenv').config();
+
 
 // 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'public')));

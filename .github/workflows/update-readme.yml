@@ -1,10 +1,9 @@
-name: Update README
+name: Update README on Board Change
 
 on:
-  push:
-    paths:
-      - 'board.json'  # 보드 상태가 저장된 파일을 모니터링
-
+  repository_dispatch:
+    types: [update_readme]
+    
 jobs:
   update-readme:
     runs-on: ubuntu-latest

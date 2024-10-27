@@ -1,6 +1,8 @@
 // update_github_readme.js
 const fs = require('fs');
 const https = require('https');
+require('dotenv').config();
+
 
 // README 파일의 시작과 끝 부분 설정
 const START = '<!-- BOARD START -->';
