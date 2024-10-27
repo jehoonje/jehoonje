@@ -15,23 +15,22 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Node.js 버전 설정
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install  # 필요한 경우
 
     - name: Run update_readme.js
-      env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # GitHub Secrets에 설정된 토큰
-      run: node update_github_readme.js
-
-      name: Push changes
-      run: |
-        git config --global user.name 'jehoonje'
-        git config --global user.email 'YOUR_EMAIL@example.com'
-        git add README.md
-        git commit -m "Update board state in README"
-        git push --force https://$MY_GITHUB_TOKEN@github.com/jehoonje/jehoonje.git main
+      run: node update_readme.js
       env:
         MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
+    - name: Push changes
+      run: |
+        git config --global user.name 'jehoonje'
+        git config --global user.email 'limjhoon8@gmail.com'  # 자신의 GitHub 이메일로 변경
+        git add README.md
+        git commit -m "Update board state in README"
+        git push https://$MY_GITHUB_TOKEN@github.com/jehoonje/jehoonje.git main
+      env:
+        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
