@@ -92,6 +92,6 @@ Here are some ideas to get you started:
 
 ## 게임에 참여하기
 
-[오목 게임에 참여하려면 여기를 클릭하세요](https://omok-game-app.herokuapp.com/)
+[오목 게임에 참여하려면 여기를 클릭하세요](https://omok-game-app-ea4b1b706acd.herokuapp.com/)
 
 
