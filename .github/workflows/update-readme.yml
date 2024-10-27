@@ -1,0 +1,35 @@
+name: Update Profile README
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 매 5분마다 실행
+  workflow_dispatch:        # 수동으로 실행 가능
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Update README
+        run: node update_readme.js
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'jehoonje'
+          git config --global user.email 'limjhoon8@gmail.com'
+          git add README.md
+          git commit -m "Update board state in README" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
