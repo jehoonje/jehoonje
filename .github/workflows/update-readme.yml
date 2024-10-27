@@ -20,35 +20,9 @@ jobs:
           node-version: '20'  # Node.js 버전 설정
 
       - name: Install dependencies
-        run: npm install  # 필요한 경우
+        run: npm install
 
-      - name: Run update_readme.js
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # GitHub Secrets에 설정된 토큰
-        run: node update_github_readme.js
-
-      - name: Configure Git
-        run: |
-          git config --global user.name 'jehoonje'
-          git config --global user.email 'limjhoon8@gmail.com'  # 실제 GitHub 이메일로 변경
+      - name: Run update-readme.js
         env:
           MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-
-      - name: Pull latest changes
-        run: |
-          git pull origin main --rebase
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-
-      - name: Commit changes
-        run: |
-          git add README.md
-          git commit -m "Update board state in README" || echo "No changes to commit"
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-
-      - name: Push changes
-        run: |
-          git push https://${{ secrets.MY_GITHUB_TOKEN }}@github.com/jehoonje/jehoonje.git main
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        run: node scripts/update-readme.js

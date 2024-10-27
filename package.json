@@ -1,14 +1,10 @@
 {
-  "name": "omok-server",
+  "name": "omok-client",
   "version": "1.0.0",
-  "description": "오목 게임 서버",
-  "main": "app.js",
+  "description": "오목 게임 클라이언트",
+  "main": "public/app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "live-server public"
   },
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "socket.io": "^4.8.1"
-  }
+  "dependencies": {}
 }
