@@ -1,8 +1,6 @@
 name: Update README with Omok Board
 
 on:
-  schedule:
-    - cron: '*/10 * * * *' # 매 10분마다 실행
   workflow_dispatch: # 수동 트리거를 위한 설정
 
 jobs:
