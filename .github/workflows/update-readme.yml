@@ -1,30 +1,56 @@
-name: Update README on Board Change
+name: Update README with Omok Board
 
 on:
   repository_dispatch:
     types: [update_readme]
+  schedule:
+    - cron: '*/10 * * * *' # 매 10분마다 실행 (원하는 주기로 수정 가능)
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # 전체 히스토리 가져오기
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Node.js 버전 설정
+          node-version: '16'
 
-      - name: Install dependencies
-        run: npm install
-        working-directory: ./scripts
+      - name: Fetch Omok Board
+        id: fetch_board
+        run: |
+          RESPONSE=$(curl -s https://omok-server.vercel.app/api/move)
+          echo "BOARD=$RESPONSE" >> $GITHUB_ENV
 
-      - name: Run update-readme.js
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-        run: node update-readme.js
-        working-directory: ./scripts
+      - name: Update README
+        run: |
+          # Extract board and currentTurn from JSON
+          BOARD=$(echo $BOARD | jq '.board')
+          CURRENT_TURN=$(echo $BOARD | jq -r '.currentTurn')
+
+          # Generate Markdown table
+          echo "|   | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O |" > board.md
+          echo "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|" >> board.md
+          for i in {0..14}; do
+            ROW_NUM=$((i + 1))
+            ROW_CONTENT=$(echo $BOARD | jq -r ".board[$i] | join(\" | \")")
+            echo "| ${ROW_NUM} | ${ROW_CONTENT} |" >> board.md
+          done
+
+          # Read existing README
+          README_CONTENT=$(cat README.md)
+
+          # Replace the board section
+          NEW_README=$(echo "$README_CONTENT" | sed -E '/<!-- BOARD START -->/,/<!-- BOARD END -->/c<!-- BOARD START -->\n\`\`\`markdown\n'"$(cat board.md)"'\n\`\`\`\n<!-- BOARD END -->')
+
+          # Write back to README.md
+          echo "$NEW_README" > README.md
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update Omok board"
+          branch: main
