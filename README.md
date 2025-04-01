@@ -64,10 +64,16 @@ Here are some ideas to get you started:
     <br>
     <img src="https://img.shields.io/badge/MySQL-4479A1?style={flat}&logo=mysql&logoColor=000000"/>
     <img src="https://img.shields.io/badge/VScode-007ACC?style={flat}&logo=visualstudiocode&logoColor=000000"/>
-    <img src="https://img.shields.io/badge/Java-ED8B00?style={flat}&logo=openjdk&logoColor=000000"/> 
+    <img src="https://img.shields.io/badge/Java-ED8B00?style={flat}&logo=openjdk&logoColor=000000"/>
     <img src="https://img.shields.io/badge/jQuery-0769AD?style={flat}&logo=jquery&logoColor=000000"/>
     <img src="https://img.shields.io/badge/GIT-E44C30?style={flat}&logo=git&logoColor=000000"/>
+    <br>
+    <img src="https://img.shields.io/badge/Next.js-000000?style={flat}&logo=next.js&logoColor=ffffff"/>
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style={flat}&logo=typescript&logoColor=ffffff"/>
+    <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style={flat}&logo=tailwindcss&logoColor=ffffff"/>
+    <img src="https://img.shields.io/badge/Zustand-8A2BE2?style={flat}&logo=zustand&logoColor=ffffff"/>
 </div>
+
 <br>
 <br>
 <br>
